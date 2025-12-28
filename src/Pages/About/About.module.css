@@ -1,0 +1,237 @@
+/* ===============================
+   ABOUT SECTION – PRODUCTION READY
+================================ */
+
+.about {
+  min-height: 100vh;
+  padding: 120px 0;
+  background:  var(--gradient-main);
+  display: flex;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 1.5rem;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.header {
+  max-width: 700px;
+  margin-bottom: 4rem;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.header h2 {
+  font-size: 3rem;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+}
+
+.header span {
+  color: var(--color-primary);
+}
+
+.header p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+.content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* LEFT CONTENT */
+.left {
+  opacity: 0;
+  animation: fadeLeft 0.9s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.left p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* RIGHT CONTENT */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.8rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Stagger animation */
+.card:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(27, 209, 255, 0.151);
+}
+
+/* Card Content */
+.card h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.expList {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.expList li {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+.expList li strong {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* Custom bullet */
+.expList li::marker {
+  color: var(--color-primary);
+}
+.card p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.card p strong {
+  display: block;
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.card p span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
+/* Education List */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 1.2rem;
+}
+
+.card li strong {
+  display: block;
+  color: var(--color-text-main);
+}
+
+.card li span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+.card li em {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .header h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.05rem;
+  }
+
+  .left p {
+    font-size: 1rem;
+  }
+}

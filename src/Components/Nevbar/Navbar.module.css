@@ -1,0 +1,135 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--gradient-main);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Navbar Layout ===== */
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Logo ===== */
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--color-text-main);
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+/* ===== Menu ===== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover {
+  color: var(--color-text-main);
+}
+
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.menu li a.active {
+  color: var(--color-text-main);
+  background-color: var(--gradient-main);
+}
+
+.menu li a.active::after {
+  width: 100%;
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--color-text-main);
+  transition: all 0.35s ease;
+  border-radius: 3px;
+}
+
+/* Hamburger open animation */
+.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--gradient-main);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 2.5rem 0;
+    height: 100vh;
+    transform: translateX(120%);
+    transition: transform 0.45s ease;
+  }
+
+  .menu.active {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

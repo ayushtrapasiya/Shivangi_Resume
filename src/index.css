@@ -1,0 +1,48 @@
+:root {
+  /* ===== Brand Colors ===== */
+  --color-bg-dark: #0a0a0a;
+  --color-bg-secondary: #0f172a;
+
+  --color-primary: #00f5d4;
+  --color-secondary: #38bdf8;
+  --color-accent: #a855f7;
+
+  --color-text-main: #ffffff;
+  --color-text-muted: #94a3b8;
+
+  /* ===== Gradients ===== */
+  --gradient-main: linear-gradient(
+    270deg,
+    #0a0a0a,
+    #0f172a,
+    #020617,
+    #0a0a0a
+  );
+
+  --gradient-text: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
+
+[data-theme="dark"] {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
