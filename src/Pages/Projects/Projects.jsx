@@ -16,10 +16,8 @@ export default function Projects() {
             on performance, user experience, and real-world business needs.
           </p>
         </div>
-
         {/* Laptop Preview */}
         <LaptopPreview video="/135.mp4" />
-
         {/* Info Section */}
         <div className={styles.infoGrid}>
           {/* Left */}
@@ -28,7 +26,6 @@ export default function Projects() {
             <p>
               <section class="project-details">
                 <h3>135° Admin Dashboard (Fully Functional System)</h3>
-
                 <p>
                   Developed a 135-degree styled admin dashboard with complete
                   end-to-end functionality, focused on scalability, real-time
